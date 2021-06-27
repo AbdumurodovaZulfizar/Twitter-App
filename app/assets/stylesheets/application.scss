@@ -30,3 +30,14 @@
 .notifications:not(:last-child){
   margin-bottom: 0px;
 }
+
+.control {
+  margin-top: 7px;
+}
+
+.field {
+  margin-right: 20px;
+  .sign-up{
+    margin-top: 14px;
+  }
+}
