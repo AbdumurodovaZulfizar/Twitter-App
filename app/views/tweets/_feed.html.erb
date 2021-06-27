@@ -9,36 +9,47 @@
 
     </div>
   </article>
-<div>
+</div>
 
 <% @tweets.each do |tweet| %>
-  <div class="box">
-    <article class="media">
-      <div class="media-left">
-        <figure class="image is-64x64">
-          <img src="https://bulma.io/images/placeholders/64x64.png">
-        </figure>
-      </div>
-      <div class="media-content">
-        <div class="content">
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+        <img src="https://bulma.io/images/placeholders/64x64.png">
+      </figure>
+    </div>
+    <div class="media-content">
+      <div class="content">
         <strong> Zulfizar Abdumurodova </strong> <br />
         <small>abdumurodovazulfizar77@gmail.com</small> <br />
         <p><%= tweet.tweet%>
         </p>
-        </div>
-        <nav class="level">
-          <div class="level-left is-mobile">
-            <%= link_to tweet, class="level-item" do %>
-              <div class="icon">
-                <span>
-                  <i class="fa fa-link" aria-hidden='true'>
-                  </i>
-                </span>
-              </div>
-            <% end %>
-          </div>
-        </nav>
       </div>
-    </article>
-  </div>
+      <nav class="level">
+        <div class="level-left is-mobile">
+          <%= link_to tweet, class:"level-item" do %>
+          <span>
+            <i class="fa fa-link" aria-hidden='true'>
+            </i>
+          </span>
+
+          <% end %>
+          <%= link_to edit_tweet_path(tweet), class:'level-item' do %>
+          <span>
+            <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+          </span>
+          <% end %>
+
+          <%= link_to tweet, method: :delete, data: {confirm: "Are you sure you want to delete this tweet?"}, class:'level-item' do %>
+          <span>
+            <i class="fas fa-trash-alt" aria-hidden="true"></i>
+          </span>
+          <% end %>
+
+        </div>
+      </nav>
+    </div>
+  </article>
+</div>
 <% end %>
