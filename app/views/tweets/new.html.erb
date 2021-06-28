@@ -1,5 +1,29 @@
-<h1>New Tweet</h1>
+<h1>Create New Tweet</h1>
 
 <%= render 'form', tweet: @tweet %>
 
 <%= link_to 'Back', tweets_path %>
+
+
+<div class="section">
+  <div class="container">
+    <div class="column is-centered">
+      <div class="column is-half">
+        <h1 class="title">New Tweet</h1>
+        <%= render 'form', tweet: @tweet%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="navbar is-fixed-bottom">
+  <div class="navbar-menu">
+    <div class="navbar-item">
+      <div class="field is-grouped">
+        <p class="control">
+          <%= link_to "Back", tweets_path, class:"button is-dark" %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
