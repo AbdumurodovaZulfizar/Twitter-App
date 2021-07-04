@@ -12,18 +12,12 @@
   </head>
 
   <body>
-  <% if flash[:notice] %>
-    <div class = "notification is-primary global-notification">
-      <p class="notice"><%= notice %>
-      </p>
-    </div>
-  <% end %>
-
-  <% if flash[:alert] %>
-    <div class = "notification is-danger global-notification">
-      <p class="alert"><%= alert %>
-      </p>
-    </div>
+  <% if flash notice %>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <%= notice %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+    
   <% end %>
 
   <nav class="navbar is-info">
